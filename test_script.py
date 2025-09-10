@@ -2,8 +2,8 @@
 
 def greet_user():
     print("Welcome to the Sample Python Script!")
-    name = "What is your name? "
-    print(f"Hello, {name}! Let's do a quick calculation.")
+    nam = "What is your name? "
+    print(f"Hello, {nam}! Let's do a quick calculation.")
 
 def add_numbers(a, b):
     return a + b
