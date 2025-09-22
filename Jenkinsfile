@@ -2,19 +2,20 @@ pipeline {
   agent any
 
   stages {
-    stage('Prepare') {
+    stage('Build the Docker image') {
       steps {
-        sh '''
-          echo "Using Python version:"
-          python3 --version || python --version
-          ls -l
-        '''
+          sh '''
+          cd /Users/santhapriya/Documents/sampleprogram
+          docker build -t test_script:v2 .
+          '''
       }
     }
 
-    stage('Run sample script') {
+    stage('Run docker container') {
       steps {
-        sh 'python3 test_script.py'
+          sh '''
+	  docker run test_script:v2
+	  '''
       }
     }
   }
